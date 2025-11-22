@@ -1,0 +1,5 @@
+Remove shopify restyle
+Check whether colors can be imported from the tailwind config
+Review the gill sans font (making it bolder)
+Change the button on onboarding screen to change when scrolling
+Come back to the onboarding text container

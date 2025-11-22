@@ -1,0 +1,1 @@
+export { default as OnboardingTextCrescent } from "./OnboardingTextCrescent.svg"

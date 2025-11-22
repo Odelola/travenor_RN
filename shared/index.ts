@@ -1,0 +1,1 @@
+export { default as HighlightedSvgHeading } from "./HighlightedSvgHeading"
