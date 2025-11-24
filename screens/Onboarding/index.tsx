@@ -1,12 +1,11 @@
 import React from 'react'
-import { AppBox, AppButton, AppText } from '@components/ui'
+import { AppBox, AppButton, AppText, HighlightedSvgHeading } from '@/shared';
 import { Animated, FlatList, FlatListProps, Image, TouchableOpacity, useWindowDimensions } from 'react-native'
 import { APP_FONTS } from 'theme';
 import { OnboardingTextCrescent } from '@assets/svgs';
-import { AppTextProps } from '@components/ui/AppText';
+import { AppTextProps } from '@/shared/AppText';
 import { APP_SCREEN_NAMES, ONBOARDING_DATA, ONBOARDING_DATA_TYPE } from '@/constants';
 import { StatusBar } from 'expo-status-bar';
-import { HighlightedSvgHeading } from '@/shared';
 import { NavigationProp } from '@react-navigation/native';
 
 function Onboarding({ navigation }: { navigation: NavigationProp<any, any> }) {
@@ -14,6 +13,10 @@ function Onboarding({ navigation }: { navigation: NavigationProp<any, any> }) {
 
     const flatListRef = React.useRef(null);
     const scrollX = React.useRef(new Animated.Value(0)).current;
+
+    const _navigateToAuthScreen = () => {
+        navigation.navigate(APP_SCREEN_NAMES['AUTH-SCREEN-NAVIGATOR']);
+    }
 
     const ScrollIndicators = () => {
         return (
@@ -39,17 +42,17 @@ function Onboarding({ navigation }: { navigation: NavigationProp<any, any> }) {
         )
     }
 
-    function OnboardingHeading({ children, ...props }: AppTextProps) {
+    function OnboardingHeading({ children }: AppTextProps) {
         return (
-            <AppText fontSize={30} fontFamily={APP_FONTS.GEOMETR415} {...props}>
+            <AppText fontSize={30} className='text-dark' fontFamily={APP_FONTS.GEOMETR415}>
                 {children}
             </AppText>
         )
     }
 
-    function OnboardingText({ children, ...props }: AppTextProps) {
+    function OnboardingText({ children }: AppTextProps) {
         return (
-            <AppText fontSize={16} fontFamily={APP_FONTS['GILL-SANS']} className='text-grey-400' {...props}>
+            <AppText fontFamily={APP_FONTS['GILL-SANS']} style={{ lineHeight: 24}}>
                 {children}
             </AppText>
         )
@@ -59,7 +62,7 @@ function Onboarding({ navigation }: { navigation: NavigationProp<any, any> }) {
     return (
         <AppBox className='pb-4'>
             <StatusBar style='light' />
-            <TouchableOpacity className='absolute mt-8 z-50 top-4 right-5'>
+            <TouchableOpacity className='absolute mt-8 z-50 top-4 right-5' onPress={() => _navigateToAuthScreen()}>
                 <AppText fontFamily={APP_FONTS['GILL-SANS']} className='text-primary-100 text-xl'>Skip</AppText>
             </TouchableOpacity>
             <FlatList
@@ -83,7 +86,7 @@ function Onboarding({ navigation }: { navigation: NavigationProp<any, any> }) {
                 <ScrollIndicators />
             </AppBox>
             <AppBox style={{ paddingHorizontal: width * .05 }}>
-                <AppButton buttonText={"Get Started"} onPress={() => navigation.navigate(APP_SCREEN_NAMES['AUTH-SCREEN-NAVIGATOR'])} />
+                <AppButton buttonText={"Get Started"} onPress={() => _navigateToAuthScreen()} />
             </AppBox>
         </AppBox>
     )
