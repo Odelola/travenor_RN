@@ -3,36 +3,29 @@ import { APP_SCREEN_NAMES } from "@/constants";
 import { AppBackNavigator, AppBox, AppButton, AppInput, AppLink, AppScreen, AppText } from "@/shared";
 import { NavigationProp } from "@react-navigation/native";
 
-function AuthSignIn({navigation}: {navigation: NavigationProp<any, any>}) {
-
-        const _navigateToSignUpScreen = () => {
-            navigation.navigate(APP_SCREEN_NAMES['AUTH-SIGN-UP']);
-        }
-        const _navigateToForgotPasswordScreen = () => {
-            navigation.navigate(APP_SCREEN_NAMES['AUTH-FORGOT-PASSWORD']);
-        }
-
+function AuthSignUp({ navigation }: { navigation: NavigationProp<any, any> }) {
+    const _navigateToSignInScreen = () => {
+        navigation.navigate(APP_SCREEN_NAMES['AUTH-SIGN-IN']);
+    }
     return (
         <AppScreen >
             <AppBackNavigator />
             <AppBox className="items-center my-10">
-                <AppText variant="bigHeading">Sign in now</AppText>
-                <AppText>Please sign in to continue our app</AppText>
+                <AppText variant="bigHeading">Sign up now</AppText>
+                <AppText>Please fill the details and create account</AppText>
             </AppBox>
             <AppBox>
+                <AppInput placeholder="Name" hasMargin />
                 <AppInput placeholder="Email" hasMargin />
-                <AppInput placeholder="Password" hasMargin secureTextEntry iconRight={<EyeSlashIcon />}  />
-            </AppBox>
-            <AppBox className="items-end">
-                <AppLink linkText="Forget Password?" onPress={() => _navigateToForgotPasswordScreen()} />
+                <AppInput placeholder="Password" hasMargin secureTextEntry iconRight={<EyeSlashIcon />} />
             </AppBox>
             <AppBox className="my-12">
-                <AppButton buttonText="Sign In" />
+                <AppButton buttonText="Sign Up" />
             </AppBox>
             <AppBox className="items-center">
                 <AppBox className="flex-row">
-                    <AppText>Don't have an account?</AppText>
-                    <AppLink linkText="Sign up"  onPress={() => _navigateToSignUpScreen()} />
+                    <AppText>Already have an account?</AppText>
+                    <AppLink linkText="Sign in" onPress={() => _navigateToSignInScreen()}  />
                 </AppBox>
                 <AppBox className="mt-2">
                     <AppText>Or connect</AppText>
@@ -47,4 +40,4 @@ function AuthSignIn({navigation}: {navigation: NavigationProp<any, any>}) {
     )
 }
 
-export default AuthSignIn;
+export default AuthSignUp;

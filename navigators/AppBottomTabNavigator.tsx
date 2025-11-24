@@ -1,17 +1,14 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Search, Library, Menu } from '../screens';
+import { Home } from '../screens';
 import { HomeIcon, SearchIcon, LibraryIcon, MenuIcon, HomeIconActive, SearchIconActive, LibraryIconActive, MenuIconActive } from '../components/Icons/bottomTabIcons';
-import theme, { appPalette } from '../theme';
 import { ParamListBase, RouteProp } from '@react-navigation/native';
 import { Platform } from 'react-native';
 
 
 const AppBottomTab = createBottomTabNavigator();
 
-const { tabBarBackground, whiteTextColor, pureBlack } = appPalette
-const { s: smallSpacing } = theme.spacing
 export default function AppBottomTabNavigator() {
-    const getRouteIcon = (focused: boolean, route: RouteProp<ParamListBase, string>) => {
+       const getRouteIcon = (focused: boolean, route: RouteProp<ParamListBase, string>) => {
         switch (route.name) {
             case "Home":
                 return focused ? <HomeIconActive /> : <HomeIcon />
@@ -27,7 +24,7 @@ export default function AppBottomTabNavigator() {
     }
 
     const defaultTabStyle = {
-        backgroundColor: tabBarBackground,
+        // backgroundColor: tabBarBackground,
         paddingTop: 0,
         borderTopWidth: 0,
         height: 80
@@ -52,33 +49,15 @@ export default function AppBottomTabNavigator() {
                 tabBarIconStyle: {marginTop: 10, marginBottom: 10},
                 headerShown: false,
                 tabBarStyle: [defaultTabStyle, Platform.OS === "ios" && tabStyleForIos],
-                tabBarLabelStyle: { color: whiteTextColor, paddingBottom: smallSpacing * 2,},
+                // tabBarLabelStyle: { color: whiteTextColor },
                 tabBarItemStyle: {paddingBottom: 0},
-                tabBarActiveBackgroundColor: pureBlack
+                // tabBarActiveBackgroundColor: pureBlack
             })}
         >
             <AppBottomTab.Screen name="Home" component={Home}
                 options={{
                     tabBarLabel: "Home",
                     title: "Home",
-                }}
-            />
-            <AppBottomTab.Screen name="Search" component={Search}
-                options={{
-                    tabBarLabel: "Search",
-                    title: "Search",
-                }}
-            />
-            <AppBottomTab.Screen name="Library" component={Library}
-                options={{
-                    tabBarLabel: "Library",
-                    title: "Library",
-                }}
-            />
-            <AppBottomTab.Screen name="Menu" component={Menu}
-                options={{
-                    tabBarLabel: "Menu",
-                    title: "Menu",
                 }}
             />
         </AppBottomTab.Navigator>

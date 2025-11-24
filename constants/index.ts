@@ -56,6 +56,7 @@ export const APP_SCREEN_NAMES ={
     "AUTH-SIGN-IN": "AuthSignIn",
     "AUTH-SIGN-UP": "AuthSignUp",
     "AUTH-FORGOT-PASSWORD": "AuthForgotPassword",
+    "AUTH-OTP-VERIFICATION": "AuthOTPVerification",
     "APP-BOTTOM-TAB-NAVIGATOR": "AppBottomTabNavigator",
     "HOME": "Home"
 }

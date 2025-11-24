@@ -1,11 +1,12 @@
 import { useFonts } from 'expo-font';
-import { ThemeProvider } from '@shopify/restyle';
-import theme, { APP_FONTS } from './theme';
+import { APP_FONTS } from './theme';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppBottomTabNavigator, AuthScreenNavigator } from './navigators';
 import Onboarding from 'screens/Onboarding';
 import { APP_SCREEN_NAMES } from './constants';
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
 
@@ -28,7 +29,7 @@ export default function App() {
 
   const AppStack = createNativeStackNavigator();
   return (
-    <ThemeProvider theme={theme}>
+    <SafeAreaProvider>
       <NavigationContainer>
         <AppStack.Navigator screenOptions={{ headerShown: false }}>
           <AppStack.Screen name={APP_SCREEN_NAMES.ONBOARDING} component={Onboarding} />
@@ -36,6 +37,6 @@ export default function App() {
           <AppStack.Screen name={APP_SCREEN_NAMES['APP-BOTTOM-TAB-NAVIGATOR']} component={AppBottomTabNavigator} />
         </AppStack.Navigator>
       </NavigationContainer>
-    </ThemeProvider >
+    </SafeAreaProvider>
   );
 }

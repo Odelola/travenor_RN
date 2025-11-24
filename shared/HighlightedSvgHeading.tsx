@@ -1,6 +1,7 @@
 // import { OnboardingTextCrescent } from "@/assets/svgs"
 import { OnboardingTextCrescent } from "@/assets/static/images"
-import { AppBox, AppText } from "@/components/ui"
+import AppBox from "./AppBox"
+import AppText from "./AppText"
 import { APP_FONTS } from "@/theme"
 import { Image } from "react-native"
 
