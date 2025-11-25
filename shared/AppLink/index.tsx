@@ -1,6 +1,6 @@
 import { Pressable, PressableProps } from 'react-native'
 import { APP_FONTS, APP_PALETTE } from 'theme'
-import AppText, { AppTextProps } from '../AppText'
+import AppText from '../AppText'
 
 interface AppLinkProps extends PressableProps {
     linkText: string
