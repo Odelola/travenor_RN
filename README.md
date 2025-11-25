@@ -1,6 +1,6 @@
-# AUDIOTERIA - SENIOR REACT NATIVE DEVELOPER ASSESSMENT
+# TRAVENOR - TRAVEL APP
 
-The developed app for the Senior React Native Developer Assessment (Studio 14)
+App is currently in development,
 #### Repository
 
 [Project's Repository](https://github.com/Odelola/audioteria_RNApp)
@@ -34,7 +34,7 @@ npx expo start
 
 - React Native
 - Typescript
-- Shopify Restyle
+- Nativewind
 - React Native Navigation and Bottom Tab Navigation
 
 ### Project Demo Videos
