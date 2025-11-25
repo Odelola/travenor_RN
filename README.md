@@ -3,7 +3,7 @@
 App is currently in development,
 #### Repository
 
-[Project's Repository](https://github.com/Odelola/audioteria_RNApp)
+[Project's Repository](https://github.com/Odelola/travenor_RN)
 
 ## HOW TO RUN
 
