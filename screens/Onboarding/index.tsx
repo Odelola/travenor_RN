@@ -58,7 +58,6 @@ function Onboarding({ navigation }: { navigation: NavigationProp<any, any> }) {
         )
     }
 
-    // const navigation = useNavigation();
     return (
         <AppBox className='pb-4'>
             <StatusBar style='light' />

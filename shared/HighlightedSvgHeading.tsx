@@ -1,4 +1,3 @@
-// import { OnboardingTextCrescent } from "@/assets/svgs"
 import { OnboardingTextCrescent } from "@/assets/static/images"
 import AppBox from "./AppBox"
 import AppText from "./AppText"
